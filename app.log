@@ -1,0 +1,55 @@
+2025-04-30 22:34:28,499 - INFO - [init_logger:486] - File logging directed to: C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\app.log
+2025-04-30 22:34:28,499 - INFO - [init_logger:508] - PDF Export Tool v1.5 started.
+2025-04-30 22:34:28,509 - DEBUG - [initUI:550] - Initializing UI with QScrollArea and fixed width.
+2025-04-30 22:34:29,164 - WARNING - [initUI:647] - Help icon not found.
+2025-04-30 22:34:29,390 - DEBUG - [setup_export_settings_panel:840] - Setting up collapsible export settings panel.
+2025-04-30 22:34:37,117 - INFO - [initUI:738] - Set maximum window height to: 1090px
+2025-04-30 22:34:37,118 - INFO - [initUI:750] - Set fixed window width to: 1000px
+2025-04-30 22:34:37,122 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=701, Required=796, Target=796
+2025-04-30 22:34:37,124 - INFO - [toggle_mode_selection:1163] - Export mode changed to: Automate for a list
+2025-04-30 22:34:37,125 - DEBUG - [toggle_mode_selection:1186] - Attribute 'sheet_name' exists but is None during mode toggle.
+2025-04-30 22:34:37,125 - DEBUG - [toggle_mode_selection:1186] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
+2025-04-30 22:34:37,127 - INFO - [_perform_update_check:3836] - Checking for updates...
+2025-04-30 22:34:37,128 - DEBUG - [_perform_update_check:3838] - Requesting latest release info from https://api.github.com/repos/haythamsoufi/TableauPDF/releases/latest
+2025-04-30 22:34:41,934 - INFO - [apply_custom_theme:393] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\styles\macos_style.qss
+2025-04-30 22:34:43,498 - INFO - [_perform_update_check:3841] - Current version: v1.5, Latest version found: v1.5
+2025-04-30 22:34:43,549 - INFO - [_perform_update_check:3860] - Application is up-to-date.
+2025-04-30 22:35:52,880 - INFO - [load_configuration:2337] - Loading configuration from: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/New/Reporting.ini
+2025-04-30 22:35:52,882 - INFO - [reset_fields:790] - Resetting input fields.
+2025-04-30 22:35:52,889 - INFO - [reset_combined_logic:3962] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-04-30 22:35:52,895 - INFO - [reset_filters:3891] - Resetting all Excel list filters.
+2025-04-30 22:35:52,897 - INFO - [reset_conditions:3918] - Resetting all conditions.
+2025-04-30 22:35:52,900 - INFO - [reset_parameters:3940] - Resetting all parameters.
+2025-04-30 22:35:52,900 - INFO - [reset_combined_logic:3966] - Cleared all filters, conditions, and parameters.
+2025-04-30 22:35:55,655 - INFO - [load_sheets:1268] - Loaded sheets: ['Export List', 'Support', 'Key data', 'UPR Data', 'UPR Submissions', 'P25 imputed', 'Indicator bank', 'Icons', 'GRBMP']. Selecting first sheet 'Export List'.
+2025-04-30 22:35:55,657 - INFO - [on_sheet_selection_changed:1317] - Sheet selection changed to: 'Export List'
+2025-04-30 22:35:55,660 - INFO - [reset_combined_logic:3962] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-04-30 22:35:55,661 - INFO - [reset_filters:3891] - Resetting all Excel list filters.
+2025-04-30 22:35:55,663 - INFO - [reset_conditions:3918] - Resetting all conditions.
+2025-04-30 22:35:55,665 - INFO - [reset_parameters:3940] - Resetting all parameters.
+2025-04-30 22:35:55,666 - INFO - [reset_combined_logic:3966] - Cleared all filters, conditions, and parameters.
+2025-04-30 22:35:56,490 - INFO - [on_sheet_selection_changed:1334] - Loaded columns from sheet 'Export List': ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach']
+2025-04-30 22:35:56,502 - DEBUG - [load_columns_for_filters:1824] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 filter field(s).
+2025-04-30 22:35:56,503 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 condition(s).
+2025-04-30 22:35:56,504 - INFO - [load_configuration:2368] - Setting sheet index to 0 ('Export List') from config.
+2025-04-30 22:35:56,506 - INFO - [toggle_mode_selection:1163] - Export mode changed to: Automate for a list
+2025-04-30 22:35:56,514 - DEBUG - [add_filter_line:1622] - Adding new filter line to UI.
+2025-04-30 22:35:57,489 - DEBUG - [populate_values_list:1743] - Populating values list for filter field: 'Round'
+2025-04-30 22:35:58,458 - DEBUG - [populate_values_list:1761] - Found 3 unique values for 'Round'. Populating list.
+2025-04-30 22:35:58,470 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
+2025-04-30 22:35:59,508 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-30 22:35:59,510 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
+2025-04-30 22:36:00,425 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-30 22:36:00,440 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
+2025-04-30 22:36:01,468 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-30 22:36:01,486 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
+2025-04-30 22:36:02,473 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-30 22:36:02,485 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
+2025-04-30 22:36:03,572 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-30 22:36:03,601 - INFO - [add_recent_file:2301] - Added 'Reporting.ini' to recent files.
+2025-04-30 22:36:03,893 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=1047, Required=1142, Target=1090
+2025-04-30 22:36:06,114 - DEBUG - [toggle_logic_section:1485] - Logic section visibility toggled to: False
+2025-04-30 22:36:06,118 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=704, Required=799, Target=799
+2025-04-30 22:36:06,130 - DEBUG - [toggle_logic_section:1488] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 799)
+2025-04-30 22:36:10,560 - INFO - [closeEvent:3868] - Close event triggered.
+2025-04-30 22:36:10,560 - INFO - [closeEvent:3881] - Accepting close event (no task running).

@@ -1,0 +1,228 @@
+2025-04-22 17:52:36,895 - INFO - [init_logger:491] - File logging directed to: C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\app.log
+2025-04-22 17:52:36,895 - INFO - [init_logger:513] - PDF Export Tool v1.11 started.
+2025-04-22 17:52:36,895 - DEBUG - [initUI:555] - Initializing UI with QScrollArea and fixed width.
+2025-04-22 17:52:36,979 - WARNING - [initUI:652] - Help icon not found.
+2025-04-22 17:52:37,008 - DEBUG - [setup_export_settings_panel:845] - Setting up collapsible export settings panel.
+2025-04-22 17:52:37,945 - WARNING - [load_recent_files:2212] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/2025 Support.ini
+2025-04-22 17:52:37,945 - WARNING - [load_recent_files:2212] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/Midyear Reporting 2024.ini
+2025-04-22 17:52:37,945 - INFO - [initUI:743] - Set maximum window height to: 1090px
+2025-04-22 17:52:37,945 - INFO - [initUI:755] - Set fixed window width to: 1000px
+2025-04-22 17:52:37,945 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=697, Required=792, Target=792
+2025-04-22 17:52:37,945 - INFO - [toggle_mode_selection:1149] - Export mode changed to: Automate for a list
+2025-04-22 17:52:37,945 - DEBUG - [toggle_mode_selection:1172] - Attribute 'sheet_name' exists but is None during mode toggle.
+2025-04-22 17:52:37,945 - DEBUG - [toggle_mode_selection:1172] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
+2025-04-22 17:52:37,945 - INFO - [_perform_update_check:3421] - Checking for updates...
+2025-04-22 17:52:37,945 - DEBUG - [_perform_update_check:3423] - Requesting latest release info from https://api.github.com/repos/haythamsoufi/TableauPDF/releases/latest
+2025-04-22 17:52:38,995 - INFO - [apply_custom_theme:398] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\styles\macos_style.qss
+2025-04-22 17:52:39,425 - INFO - [_perform_update_check:3426] - Current version: v1.11, Latest version found: v1.5
+2025-04-22 17:52:39,425 - INFO - [_perform_update_check:3445] - Application is up-to-date.
+2025-04-22 17:53:22,139 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: False
+2025-04-22 17:53:22,140 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=687, Required=782, Target=782
+2025-04-22 17:53:22,142 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 782)
+2025-04-22 17:53:22,667 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: True
+2025-04-22 17:53:22,667 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=754, Required=849, Target=849
+2025-04-22 17:53:22,680 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 849)
+2025-04-22 17:53:23,751 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: False
+2025-04-22 17:53:23,751 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=687, Required=782, Target=782
+2025-04-22 17:53:23,751 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 782)
+2025-04-22 17:53:25,382 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: True
+2025-04-22 17:53:25,382 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=754, Required=849, Target=849
+2025-04-22 17:53:25,382 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 849)
+2025-04-22 17:53:33,210 - INFO - [load_configuration:2292] - Loading configuration from: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/New/AR24.ini
+2025-04-22 17:53:33,210 - INFO - [reset_fields:795] - Resetting input fields.
+2025-04-22 17:53:33,210 - INFO - [reset_combined_logic:3547] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-04-22 17:53:33,210 - INFO - [reset_filters:3476] - Resetting all Excel list filters.
+2025-04-22 17:53:33,210 - INFO - [reset_conditions:3503] - Resetting all conditions.
+2025-04-22 17:53:33,210 - INFO - [reset_parameters:3525] - Resetting all parameters.
+2025-04-22 17:53:33,210 - INFO - [reset_combined_logic:3551] - Cleared all filters, conditions, and parameters.
+2025-04-22 17:53:33,729 - INFO - [load_sheets:1254] - Loaded sheets: ['Support', 'Export List', 'UPR Data', 'UPR Submissions', 'P25 imputed', 'Indicator bank', 'Icons']. Selecting first sheet 'Support'.
+2025-04-22 17:53:33,729 - INFO - [on_sheet_selection_changed:1303] - Sheet selection changed to: 'Support'
+2025-04-22 17:53:33,731 - INFO - [reset_combined_logic:3547] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-04-22 17:53:33,731 - INFO - [reset_filters:3476] - Resetting all Excel list filters.
+2025-04-22 17:53:33,731 - INFO - [reset_conditions:3503] - Resetting all conditions.
+2025-04-22 17:53:33,731 - INFO - [reset_parameters:3525] - Resetting all parameters.
+2025-04-22 17:53:33,731 - INFO - [reset_combined_logic:3551] - Cleared all filters, conditions, and parameters.
+2025-04-22 17:53:33,835 - INFO - [on_sheet_selection_changed:1320] - Loaded columns from sheet 'Support': ['ISO3', 'Round', 'Country', 'NS', 'Attribute', 'Value']
+2025-04-22 17:53:33,835 - DEBUG - [load_columns_for_filters:1791] - Loading columns ['ISO3', 'Round', 'Country', 'NS', 'Attribute', 'Value'] for 0 filter field(s).
+2025-04-22 17:53:33,835 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['ISO3', 'Round', 'Country', 'NS', 'Attribute', 'Value'] for 0 condition(s).
+2025-04-22 17:53:33,835 - INFO - [load_configuration:2327] - Setting sheet index to 1 ('Export List') from config.
+2025-04-22 17:53:33,835 - INFO - [on_sheet_selection_changed:1303] - Sheet selection changed to: 'Export List'
+2025-04-22 17:53:33,835 - INFO - [reset_combined_logic:3547] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-04-22 17:53:33,835 - INFO - [reset_filters:3476] - Resetting all Excel list filters.
+2025-04-22 17:53:33,835 - INFO - [reset_conditions:3503] - Resetting all conditions.
+2025-04-22 17:53:33,835 - INFO - [reset_parameters:3525] - Resetting all parameters.
+2025-04-22 17:53:33,835 - INFO - [reset_combined_logic:3551] - Cleared all filters, conditions, and parameters.
+2025-04-22 17:53:33,960 - INFO - [on_sheet_selection_changed:1320] - Loaded columns from sheet 'Export List': ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach']
+2025-04-22 17:53:33,960 - DEBUG - [load_columns_for_filters:1791] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 filter field(s).
+2025-04-22 17:53:33,960 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 condition(s).
+2025-04-22 17:53:33,960 - INFO - [toggle_mode_selection:1149] - Export mode changed to: Automate for a list
+2025-04-22 17:53:33,960 - DEBUG - [add_filter_line:1609] - Adding new filter line to UI.
+2025-04-22 17:53:34,083 - DEBUG - [populate_values_list:1710] - Populating values list for filter field: 'Round'
+2025-04-22 17:53:34,217 - DEBUG - [populate_values_list:1728] - Found 3 unique values for 'Round'. Populating list.
+2025-04-22 17:53:34,217 - DEBUG - [add_condition_line:1823] - Adding new condition line to UI.
+2025-04-22 17:53:34,348 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-22 17:53:34,348 - DEBUG - [add_condition_line:1823] - Adding new condition line to UI.
+2025-04-22 17:53:34,478 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-22 17:53:34,480 - DEBUG - [add_condition_line:1823] - Adding new condition line to UI.
+2025-04-22 17:53:34,600 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-22 17:53:34,600 - DEBUG - [add_condition_line:1823] - Adding new condition line to UI.
+2025-04-22 17:53:34,721 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-22 17:53:34,721 - DEBUG - [add_condition_line:1823] - Adding new condition line to UI.
+2025-04-22 17:53:34,849 - DEBUG - [load_columns_for_conditions:2552] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
+2025-04-22 17:53:34,849 - DEBUG - [add_parameter_line:1892] - Adding new parameter line to UI.
+2025-04-22 17:53:34,849 - INFO - [add_recent_file:2256] - Added 'AR24.ini' to recent files.
+2025-04-22 17:53:34,857 - WARNING - [load_recent_files:2212] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/2025 Support.ini
+2025-04-22 17:53:34,857 - WARNING - [load_recent_files:2212] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/Midyear Reporting 2024.ini
+2025-04-22 17:53:34,873 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=1069, Required=1164, Target=1090
+2025-04-22 17:53:45,104 - INFO - [load_tableau_views:2567] - Attempting to load Tableau views.
+2025-04-22 17:53:45,606 - INFO - [load_tableau_views:2578] - Tableau sign-in successful.
+2025-04-22 17:53:45,748 - INFO - [load_tableau_views:2589] - Found workbook 'UPR Visuals' (ID: ec8a370a-53b9-4951-b12b-41c0de00212b).
+2025-04-22 17:53:45,845 - INFO - [load_tableau_views:2592] - Loaded 14 views: ['Control', 'Emergency 1', 'Emergency 2', 'Emergency 3', 'Financial Overview', 'In Support of', 'In addition Option 1', 'In addition Option 2', 'Indicators EFs', 'Indicators SPs', 'Planned Bilateral Support', 'Reach', 'Reach EO', 'Reported Bilateral Support']
+2025-04-22 17:53:47,010 - INFO - [load_tableau_views:2598] - Signed out from Tableau Server.
+2025-04-22 17:54:07,648 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: False
+2025-04-22 17:54:07,648 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=687, Required=782, Target=782
+2025-04-22 17:54:07,664 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 782)
+2025-04-22 17:54:14,265 - INFO - [open_server_config_dialog:2156] - Opening Server Configuration dialog.
+2025-04-22 17:54:26,595 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: True
+2025-04-22 17:54:26,597 - INFO - [apply_default_theme:422] - Reverted to default theme.
+2025-04-22 17:54:33,619 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: False
+2025-04-22 17:54:33,633 - INFO - [apply_custom_theme:398] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\styles\macos_style.qss
+2025-04-22 17:54:40,780 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: True
+2025-04-22 17:54:40,794 - INFO - [apply_default_theme:422] - Reverted to default theme.
+2025-04-22 17:54:45,393 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: False
+2025-04-22 17:54:45,407 - INFO - [apply_custom_theme:398] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\styles\macos_style.qss
+2025-04-22 17:54:47,008 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: True
+2025-04-22 17:54:47,024 - INFO - [apply_default_theme:422] - Reverted to default theme.
+2025-04-22 17:54:56,370 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: False
+2025-04-22 17:54:56,386 - INFO - [apply_custom_theme:398] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\styles\macos_style.qss
+2025-04-22 17:55:06,003 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: True
+2025-04-22 17:55:06,020 - INFO - [apply_default_theme:422] - Reverted to default theme.
+2025-04-22 17:55:10,109 - DEBUG - [toggle_theme:427] - Toggling theme. Current custom active: False
+2025-04-22 17:55:10,125 - INFO - [apply_custom_theme:398] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\dist\styles\macos_style.qss
+2025-04-22 17:55:13,383 - INFO - [OnStart:2618] - Starting export process initiated by user.
+2025-04-22 17:55:13,383 - DEBUG - [set_ui_enabled:2732] - Setting UI enabled state to: False
+2025-04-22 17:55:13,396 - INFO - [run_task:2761] - run_task started.
+2025-04-22 17:55:13,396 - INFO - [run_task:2772] - Export settings: Mode=Automate for a list, Format=PDF, Workbook='UPR Visuals', Output='C:/Users/Haytham.Alsoufi/Desktop/Test'
+2025-04-22 17:55:13,396 - INFO - [OnStart:2728] - Worker thread started for export task.
+2025-04-22 17:55:13,606 - INFO - [run_task:2778] - Tableau connection successful.
+2025-04-22 17:55:13,751 - INFO - [run_task:2790] - Found workbook 'UPR Visuals' (ID: ec8a370a-53b9-4951-b12b-41c0de00212b).
+2025-04-22 17:55:13,889 - INFO - [run_task:2794] - 14 views found in workbook.
+2025-04-22 17:55:14,010 - INFO - [run_task:2799] - Loaded Excel data: 414 rows.
+2025-04-22 17:55:14,010 - INFO - [apply_filters:2902] - Applying Excel list filters.
+2025-04-22 17:55:14,010 - DEBUG - [apply_filters:2912] - Applying Filter #1: Field='Round', Selected Values='['AR24']'
+2025-04-22 17:55:14,010 - DEBUG - [apply_filters:2936] - Filter #1 applied. Rows remaining: 154
+2025-04-22 17:55:14,010 - INFO - [run_task:2802] - List size after filtering: 154 rows.
+2025-04-22 17:55:14,010 - INFO - [run_task:2810] - Processing item 1/154 (Excel Index: 0).
+2025-04-22 17:55:14,010 - DEBUG - [run_task:2816] - Tableau filter value for item: ISO3 = AFG
+2025-04-22 17:55:14,010 - INFO - [run_task:2836] - Created output directory: C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan
+2025-04-22 17:55:14,010 - INFO - [process_views_for_item:2960] - Processing views for item. Output folder: C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan
+2025-04-22 17:55:14,010 - INFO - [process_views_for_item:3041] - Condition #1: Field='EA Reach', Type='Equals', UI_Value='Yes', Actual='Yes', Comparison='String (Case-Insensitive)', Met=True -> Excluding views: ['Reach']
+2025-04-22 17:55:14,010 - DEBUG - [process_views_for_item:3044] - Condition #2: Field='EA Reach', Type='Is Blank', UI_Value='', Actual='Yes', Comparison='Is Blank', Met=False
+2025-04-22 17:55:14,010 - DEBUG - [process_views_for_item:3044] - Condition #3: Field='EmergencyCount', Type='Is Blank', UI_Value='', Actual='2.0', Comparison='Is Blank', Met=False
+2025-04-22 17:55:14,010 - DEBUG - [process_views_for_item:3044] - Condition #4: Field='EmergencyCount', Type='Equals', UI_Value='1', Actual='2.0', Comparison='Numeric', Met=False
+2025-04-22 17:55:14,010 - INFO - [process_views_for_item:3041] - Condition #5: Field='EmergencyCount', Type='Equals', UI_Value='2', Actual='2.0', Comparison='Numeric', Met=True -> Excluding views: ['Emergency 3']
+2025-04-22 17:55:14,010 - INFO - [process_views_for_item:3067] - Views to be exported for this item (8): ['In Support of', 'Reach EO', 'Financial Overview', 'Indicators SPs', 'Indicators EFs', 'Emergency 1', 'Emergency 2', 'Reported Bilateral Support']
+2025-04-22 17:55:14,010 - DEBUG - [process_views_for_item:3088] - Applying Tableau filter: ISO3 = AFG
+2025-04-22 17:55:14,010 - DEBUG - [process_views_for_item:3118] - Parameter 'RoundParameter': Using static value 'AR24'.
+2025-04-22 17:55:14,010 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'In Support of' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\01_In Support of.pdf
+2025-04-22 17:55:14,644 - DEBUG - [export_single_view_with_retry:3318] - View 'In Support of' data populated in 0.63s.
+2025-04-22 17:55:14,644 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'In Support of' as '01_In Support of.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - In Support of.pdf) (Attempt 1).
+2025-04-22 17:55:14,644 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Reach EO' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\02_Reach EO.pdf
+2025-04-22 17:55:15,338 - DEBUG - [export_single_view_with_retry:3318] - View 'Reach EO' data populated in 0.69s.
+2025-04-22 17:55:15,338 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Reach EO' as '02_Reach EO.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Reach EO.pdf) (Attempt 1).
+2025-04-22 17:55:15,338 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Financial Overview' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\03_Financial Overview.pdf
+2025-04-22 17:55:15,895 - DEBUG - [export_single_view_with_retry:3318] - View 'Financial Overview' data populated in 0.55s.
+2025-04-22 17:55:15,897 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Financial Overview' as '03_Financial Overview.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Financial Overview.pdf) (Attempt 1).
+2025-04-22 17:55:15,897 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Indicators SPs' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\04_Indicators SPs.pdf
+2025-04-22 17:55:16,640 - DEBUG - [export_single_view_with_retry:3318] - View 'Indicators SPs' data populated in 0.74s.
+2025-04-22 17:55:16,640 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Indicators SPs' as '04_Indicators SPs.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Indicators SPs.pdf) (Attempt 1).
+2025-04-22 17:55:16,640 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Indicators EFs' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\05_Indicators EFs.pdf
+2025-04-22 17:55:17,296 - DEBUG - [export_single_view_with_retry:3318] - View 'Indicators EFs' data populated in 0.66s.
+2025-04-22 17:55:17,296 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Indicators EFs' as '05_Indicators EFs.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Indicators EFs.pdf) (Attempt 1).
+2025-04-22 17:55:17,296 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Emergency 1' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\06_Emergency 1.pdf
+2025-04-22 17:55:17,917 - DEBUG - [export_single_view_with_retry:3318] - View 'Emergency 1' data populated in 0.62s.
+2025-04-22 17:55:17,917 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Emergency 1' as '06_Emergency 1.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Emergency 1.pdf) (Attempt 1).
+2025-04-22 17:55:17,917 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Emergency 2' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\07_Emergency 2.pdf
+2025-04-22 17:55:18,588 - DEBUG - [export_single_view_with_retry:3318] - View 'Emergency 2' data populated in 0.67s.
+2025-04-22 17:55:18,594 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Emergency 2' as '07_Emergency 2.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Emergency 2.pdf) (Attempt 1).
+2025-04-22 17:55:18,594 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Reported Bilateral Support' to C:/Users/Haytham.Alsoufi/Desktop/Test\Asia Pacific\Afghanistan\08_Reported Bilateral Support.pdf
+2025-04-22 17:55:19,289 - DEBUG - [export_single_view_with_retry:3318] - View 'Reported Bilateral Support' data populated in 0.70s.
+2025-04-22 17:55:19,289 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Reported Bilateral Support' as '08_Reported Bilateral Support.pdf' (Log Ref: [Asia Pacific] - [Afghanistan] - Reported Bilateral Support.pdf) (Attempt 1).
+2025-04-22 17:55:19,289 - INFO - [process_views_for_item:3204] - Finished processing views for item (Folder: Afghanistan).
+2025-04-22 17:55:19,289 - INFO - [run_task:2810] - Processing item 2/154 (Excel Index: 1).
+2025-04-22 17:55:19,289 - DEBUG - [run_task:2816] - Tableau filter value for item: ISO3 = ALB
+2025-04-22 17:55:19,299 - INFO - [run_task:2836] - Created output directory: C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania
+2025-04-22 17:55:19,299 - INFO - [process_views_for_item:2960] - Processing views for item. Output folder: C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania
+2025-04-22 17:55:19,299 - DEBUG - [process_views_for_item:3044] - Condition #1: Field='EA Reach', Type='Equals', UI_Value='Yes', Actual='nan', Comparison='String (Case-Insensitive)', Met=False
+2025-04-22 17:55:19,299 - INFO - [process_views_for_item:3041] - Condition #2: Field='EA Reach', Type='Is Blank', UI_Value='', Actual='nan', Comparison='Is Blank', Met=True -> Excluding views: ['Reach EO']
+2025-04-22 17:55:19,299 - INFO - [process_views_for_item:3041] - Condition #3: Field='EmergencyCount', Type='Is Blank', UI_Value='', Actual='nan', Comparison='Is Blank', Met=True -> Excluding views: ['Emergency 1', 'Emergency 2', 'Emergency 3']
+2025-04-22 17:55:19,299 - DEBUG - [process_views_for_item:3044] - Condition #4: Field='EmergencyCount', Type='Equals', UI_Value='1', Actual='nan', Comparison='Numeric', Met=False
+2025-04-22 17:55:19,299 - DEBUG - [process_views_for_item:3044] - Condition #5: Field='EmergencyCount', Type='Equals', UI_Value='2', Actual='nan', Comparison='Numeric', Met=False
+2025-04-22 17:55:19,299 - INFO - [process_views_for_item:3067] - Views to be exported for this item (6): ['In Support of', 'Reach', 'Financial Overview', 'Indicators SPs', 'Indicators EFs', 'Reported Bilateral Support']
+2025-04-22 17:55:19,299 - DEBUG - [process_views_for_item:3088] - Applying Tableau filter: ISO3 = ALB
+2025-04-22 17:55:19,299 - DEBUG - [process_views_for_item:3118] - Parameter 'RoundParameter': Using static value 'AR24'.
+2025-04-22 17:55:19,299 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'In Support of' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\01_In Support of.pdf
+2025-04-22 17:55:19,920 - DEBUG - [export_single_view_with_retry:3318] - View 'In Support of' data populated in 0.62s.
+2025-04-22 17:55:19,920 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'In Support of' as '01_In Support of.pdf' (Log Ref: [Europe  CA] - [Albania] - In Support of.pdf) (Attempt 1).
+2025-04-22 17:55:19,920 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Reach' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\02_Reach.pdf
+2025-04-22 17:55:20,701 - DEBUG - [export_single_view_with_retry:3318] - View 'Reach' data populated in 0.77s.
+2025-04-22 17:55:20,701 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Reach' as '02_Reach.pdf' (Log Ref: [Europe  CA] - [Albania] - Reach.pdf) (Attempt 1).
+2025-04-22 17:55:20,701 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Financial Overview' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\03_Financial Overview.pdf
+2025-04-22 17:55:21,417 - DEBUG - [export_single_view_with_retry:3318] - View 'Financial Overview' data populated in 0.72s.
+2025-04-22 17:55:21,417 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Financial Overview' as '03_Financial Overview.pdf' (Log Ref: [Europe  CA] - [Albania] - Financial Overview.pdf) (Attempt 1).
+2025-04-22 17:55:21,417 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Indicators SPs' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\04_Indicators SPs.pdf
+2025-04-22 17:55:22,073 - DEBUG - [export_single_view_with_retry:3318] - View 'Indicators SPs' data populated in 0.66s.
+2025-04-22 17:55:22,082 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Indicators SPs' as '04_Indicators SPs.pdf' (Log Ref: [Europe  CA] - [Albania] - Indicators SPs.pdf) (Attempt 1).
+2025-04-22 17:55:22,082 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Indicators EFs' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\05_Indicators EFs.pdf
+2025-04-22 17:55:22,820 - DEBUG - [export_single_view_with_retry:3318] - View 'Indicators EFs' data populated in 0.74s.
+2025-04-22 17:55:22,820 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Indicators EFs' as '05_Indicators EFs.pdf' (Log Ref: [Europe  CA] - [Albania] - Indicators EFs.pdf) (Attempt 1).
+2025-04-22 17:55:22,820 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Reported Bilateral Support' to C:/Users/Haytham.Alsoufi/Desktop/Test\Europe  CA\Albania\06_Reported Bilateral Support.pdf
+2025-04-22 17:55:23,505 - DEBUG - [export_single_view_with_retry:3318] - View 'Reported Bilateral Support' data populated in 0.68s.
+2025-04-22 17:55:23,505 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Reported Bilateral Support' as '06_Reported Bilateral Support.pdf' (Log Ref: [Europe  CA] - [Albania] - Reported Bilateral Support.pdf) (Attempt 1).
+2025-04-22 17:55:23,520 - INFO - [process_views_for_item:3204] - Finished processing views for item (Folder: Albania).
+2025-04-22 17:55:23,520 - INFO - [run_task:2810] - Processing item 3/154 (Excel Index: 2).
+2025-04-22 17:55:23,521 - DEBUG - [run_task:2816] - Tableau filter value for item: ISO3 = DZA
+2025-04-22 17:55:23,521 - INFO - [run_task:2836] - Created output directory: C:/Users/Haytham.Alsoufi/Desktop/Test\MENA\Algeria
+2025-04-22 17:55:23,522 - INFO - [process_views_for_item:2960] - Processing views for item. Output folder: C:/Users/Haytham.Alsoufi/Desktop/Test\MENA\Algeria
+2025-04-22 17:55:23,522 - DEBUG - [process_views_for_item:3044] - Condition #1: Field='EA Reach', Type='Equals', UI_Value='Yes', Actual='nan', Comparison='String (Case-Insensitive)', Met=False
+2025-04-22 17:55:23,522 - INFO - [process_views_for_item:3041] - Condition #2: Field='EA Reach', Type='Is Blank', UI_Value='', Actual='nan', Comparison='Is Blank', Met=True -> Excluding views: ['Reach EO']
+2025-04-22 17:55:23,522 - INFO - [process_views_for_item:3041] - Condition #3: Field='EmergencyCount', Type='Is Blank', UI_Value='', Actual='nan', Comparison='Is Blank', Met=True -> Excluding views: ['Emergency 1', 'Emergency 2', 'Emergency 3']
+2025-04-22 17:55:23,522 - DEBUG - [process_views_for_item:3044] - Condition #4: Field='EmergencyCount', Type='Equals', UI_Value='1', Actual='nan', Comparison='Numeric', Met=False
+2025-04-22 17:55:23,522 - DEBUG - [process_views_for_item:3044] - Condition #5: Field='EmergencyCount', Type='Equals', UI_Value='2', Actual='nan', Comparison='Numeric', Met=False
+2025-04-22 17:55:23,522 - INFO - [process_views_for_item:3067] - Views to be exported for this item (6): ['In Support of', 'Reach', 'Financial Overview', 'Indicators SPs', 'Indicators EFs', 'Reported Bilateral Support']
+2025-04-22 17:55:23,522 - DEBUG - [process_views_for_item:3088] - Applying Tableau filter: ISO3 = DZA
+2025-04-22 17:55:23,522 - DEBUG - [process_views_for_item:3118] - Parameter 'RoundParameter': Using static value 'AR24'.
+2025-04-22 17:55:23,522 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'In Support of' to C:/Users/Haytham.Alsoufi/Desktop/Test\MENA\Algeria\01_In Support of.pdf
+2025-04-22 17:55:24,190 - DEBUG - [export_single_view_with_retry:3318] - View 'In Support of' data populated in 0.67s.
+2025-04-22 17:55:24,190 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'In Support of' as '01_In Support of.pdf' (Log Ref: [MENA] - [Algeria] - In Support of.pdf) (Attempt 1).
+2025-04-22 17:55:24,190 - DEBUG - [export_single_view_with_retry:3306] - Attempt 1 to export view 'Reach' to C:/Users/Haytham.Alsoufi/Desktop/Test\MENA\Algeria\02_Reach.pdf
+2025-04-22 17:55:24,402 - INFO - [OnStop:3367] - Stop requested by user.
+2025-04-22 17:55:24,824 - DEBUG - [export_single_view_with_retry:3318] - View 'Reach' data populated in 0.63s.
+2025-04-22 17:55:24,824 - INFO - [export_single_view_with_retry:3336] - Successfully exported view 'Reach' as '02_Reach.pdf' (Log Ref: [MENA] - [Algeria] - Reach.pdf) (Attempt 1).
+2025-04-22 17:55:24,824 - INFO - [process_views_for_item:3149] - Stop event detected during view export loop for item.
+2025-04-22 17:55:24,824 - INFO - [process_views_for_item:3204] - Finished processing views for item (Folder: Algeria).
+2025-04-22 17:55:24,824 - INFO - [run_task:2809] - Stop event detected during item processing loop.
+2025-04-22 17:55:24,824 - INFO - [run_task:2868] - ⏹ Task stopped by user.
+2025-04-22 17:55:24,907 - INFO - [run_task:2882] - Disconnected from Tableau Server.
+2025-04-22 17:55:24,907 - DEBUG - [set_ui_enabled:2732] - Setting UI enabled state to: True
+2025-04-22 17:55:24,918 - INFO - [run_task:2887] - UI re-enabled.
+2025-04-22 17:55:24,918 - INFO - [run_task:2889] - run_task finished. Duration: 11.52 seconds.
+2025-04-22 17:55:25,386 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: True
+2025-04-22 17:55:25,402 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=1017, Required=1112, Target=1090
+2025-04-22 17:55:25,402 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 1090)
+2025-04-22 17:55:27,906 - DEBUG - [add_filter_line:1609] - Adding new filter line to UI.
+2025-04-22 17:55:30,123 - DEBUG - [populate_values_list:1710] - Populating values list for filter field: 'Country'
+2025-04-22 17:55:30,250 - DEBUG - [populate_values_list:1728] - Found 157 unique values for 'Country'. Populating list.
+2025-04-22 17:56:05,643 - DEBUG - [toggle_logic_section:1471] - Logic section visibility toggled to: False
+2025-04-22 17:56:05,643 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=672, Required=767, Target=767
+2025-04-22 17:56:05,643 - DEBUG - [toggle_logic_section:1474] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 767)
+2025-04-22 17:56:06,926 - DEBUG - [toggle_export_settings_section:1483] - Export Settings section visibility toggled to: False
+2025-04-22 17:56:06,930 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=463, Required=558, Target=558
+2025-04-22 17:56:06,930 - DEBUG - [toggle_export_settings_section:1486] - Window size after export settings toggle: PyQt5.QtCore.QSize(1000, 558)
+2025-04-22 17:56:07,710 - DEBUG - [toggle_export_settings_section:1483] - Export Settings section visibility toggled to: True
+2025-04-22 17:56:07,710 - DEBUG - [_adjust_window_height:789] - Adjusting height: ContentHint=672, Required=767, Target=767
+2025-04-22 17:56:07,727 - DEBUG - [toggle_export_settings_section:1486] - Window size after export settings toggle: PyQt5.QtCore.QSize(1000, 767)
+2025-04-22 17:56:18,847 - INFO - [show_help_info:543] - Help/Info button clicked.
+2025-04-22 17:56:28,412 - INFO - [show_help_info:543] - Help/Info button clicked.
+2025-04-22 17:56:54,218 - INFO - [closeEvent:3453] - Close event triggered.
+2025-04-22 17:56:54,218 - INFO - [closeEvent:3466] - Accepting close event (no task running).

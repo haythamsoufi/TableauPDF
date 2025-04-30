@@ -1,0 +1,3 @@
+pyinstaller --name TableauPDFExporter --onefile --windowed --icon=icons/icon.ico --add-data "icons;icons" --add-data "styles;styles" TableauPDF.py
+
+pyinstaller --name TableauPDFExporter --onedir --windowed --icon=icons/icon.ico --add-data "icons;icons" --add-data "styles;styles" TableauPDF.py
