@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Web Exporter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body x-data="appState()" x-init="init()">
+    <div class="container mt-3 mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+            <h1 class="mb-0 fs-3">Tableau Bulk Exporter</h1>
+            <div>
+                <button type="button" class="btn btn-secondary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#serverConfigModal">
+                    <i class="bi bi-server me-1"></i> Configure Server
+                </button>
+                <span class="badge bg-secondary" x-text="current_version"></span>
+            </div>
+        </div>
+
+        <div id="flash-message-container" class="mb-3" style="min-height: 50px;"> <template x-if="flashMessage.text">
+                 <div class="alert alert-dismissible fade show"
+                      :class="flashMessage.type === 'error' ? 'alert-danger' : (flashMessage.type === 'warning' ? 'alert-warning' : 'alert-success')"
+                      role="alert">
+                     <span x-html="flashMessage.text"></span> <button type="button" class="btn-close" @click="flashMessage.text = ''" aria-label="Close"></button>
+                 </div>
+             </template>
+        </div>
+        <div x-show="globalError" class="alert alert-danger" x-html="globalError"></div>
+
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title fs-6">Configuration Management (Saved in Browser)</h5>
+                 <p class="small text-danger mb-2"><i class="bi bi-exclamation-triangle-fill me-1"></i> Saving includes the PAT Secret. Be aware of browser storage security risks.</p>
+                <div class="row g-2 align-items-end"> <div class="col-md-5">
+                        <label for="savedConfigsDropdown" class="form-label small mb-1">Load/Manage Saved Config:</label>
+                        <select id="savedConfigsDropdown" class="form-select form-select-sm" x-model="selectedConfigToLoad" @change="configNameInput = selectedConfigToLoad">
+                            <option value="">-- Select Configuration --</option>
+                            <template x-for="name in savedConfigNames" :key="name">
+                                <option :value="name" x-text="name"></option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                         <label for="configNameInput" class="form-label small mb-1">Enter New Name to Save:</label>
+                         <input type="text" class="form-control form-control-sm" id="configNameInput" x-model="configNameInput" placeholder="Type name here">
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-end flex-wrap gap-1"> <button type="button" class="btn btn-sm btn-success" @click="saveCurrentConfig()" :disabled="!configNameInput.trim()" title="Save current settings with the entered name">
+                            <i class="bi bi-save"></i> Save
+                        </button>
+                        <button type="button" class="btn btn-sm btn-primary" @click="loadConfig(selectedConfigToLoad)" :disabled="!selectedConfigToLoad" title="Load the selected configuration">
+                            <i class="bi bi-folder2-open"></i> Load
+                        </button>
+                        <button type="button" class="btn btn-sm btn-danger" @click="deleteConfig(selectedConfigToLoad)" :disabled="!selectedConfigToLoad" title="Delete the selected configuration">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form id="export-form" @submit.prevent="submitExportForm">
+
+            <fieldset class="mb-3 border p-3 rounded bg-light">
+                <legend class="fw-bold fs-6">Current Server & Workbook <button type="button" class="btn btn-link btn-sm p-0 ms-2" data-bs-toggle="modal" data-bs-target="#serverConfigModal">(Edit)</button></legend>
+                 <div class="row">
+                     <div class="col-md-9">
+                        <p class="mb-1 small"><strong>Server URL:</strong> <span x-text="config.server_url || 'Not Set'"></span></p>
+                        <p class="mb-1 small"><strong>Site ID:</strong> <span x-text="config.site_id || 'Default'"></span></p>
+                        <p class="mb-1 small"><strong>PAT Name:</strong> <span x-text="config.token_name || 'Not Set'"></span></p>
+                        <p class="mb-1 small"><strong>Workbook:</strong> <span x-text="config.workbook_name || 'Not Set'"></span></p>
+                        <p class="mb-0 small" :class="config.token_secret ? 'text-success' : 'text-danger'">
+                            <strong>PAT Secret:</strong> <span x-text="config.token_secret ? '******** (Set)' : 'Not Set (Required for Actions)'"></span>
+                        </p>
+                     </div>
+                     <div class="col-md-3 d-flex flex-column align-items-end">
+                         <button type="button" class="btn btn-outline-primary w-100 mb-2" @click="loadViews" :disabled="isLoadingViews || !config.server_url || !config.token_name || !config.token_secret || !config.workbook_name">
+                             <span x-show="!isLoadingViews"><i class="bi bi-cloud-download me-1"></i> Load Views</span>
+                             <span x-show="isLoadingViews">
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...
+                             </span>
+                         </button>
+                         <span class="small text-end w-100" x-text="viewLoadStatus" :class="{'text-danger': viewLoadError, 'text-success': !viewLoadError && availableViews.length > 0, 'text-muted': !viewLoadError && availableViews.length === 0}"></span>
+                     </div>
+                 </div>
+             </fieldset>
+
+            <fieldset class="mb-3 border p-3 rounded">
+                 <legend class="fw-bold fs-6">1. Export Settings</legend>
+                 <div class="row mb-3">
+                     <label for="export_mode" class="col-sm-3 col-form-label">Export Mode:</label>
+                     <div class="col-sm-9">
+                        <select class="form-select" id="export_mode" name="export_mode" x-model="config.export_mode" @change="handleModeChange" :disabled="isExporting || isLoadingViews">
+                            <option value="automate">Automate based on Excel list</option>
+                            <option value="all_once">Export selected views once</option>
+                        </select>
+                     </div>
+                 </div>
+
+                 <div x-show="config.export_mode === 'automate'" x-transition>
+                     <hr>
+                     <div class="row mb-3 align-items-center">
+                        <label for="excel_file_input" class="col-sm-3 col-form-label">Source Excel File:</label>
+                        <div class="col-sm-6">
+                            <input type="file" class="form-control" id="excel_file_input" @change="handleExcelUpload" accept=".xlsx" :disabled="isExporting || isLoadingViews">
+                            <input type="hidden" name="excel_filepath" x-model="config.excel_filepath">
+                        </div>
+                         <div class="col-sm-3">
+                            <span class="small" x-text="excelUploadStatus" :class="{'text-danger': excelUploadError, 'text-success': !excelUploadError && config.excel_filepath, 'text-muted': !excelUploadError && !config.excel_filepath }"></span>
+                         </div>
+                     </div>
+                     <div class="row mb-3" x-show="availableSheets.length > 0" x-transition>
+                         <label for="sheet_name" class="col-sm-3 col-form-label">Sheet Name:</label>
+                         <div class="col-sm-9">
+                             <select class="form-select" id="sheet_name" name="sheet_name" x-model="config.sheet_name" @change="loadColumnsForSheet" :disabled="!config.excel_filepath || isExporting || isLoadingViews">
+                                 <template x-for="sheet in availableSheets" :key="sheet">
+                                     <option :value="sheet" x-text="sheet"></option>
+                                 </template>
+                             </select>
+                         </div>
+                     </div>
+                     <div class="row mb-3" x-show="config.export_mode === 'automate' && availableColumns.length > 0" x-transition>
+                         <label for="tableau_filter_field" class="col-sm-3 col-form-label">Key Field (for Tableau Filter):</label>
+                         <div class="col-sm-9">
+                             <select class="form-select" id="tableau_filter_field" name="tableau_filter_field" x-model="config.tableau_filter_field" :disabled="!config.sheet_name || isExporting || isLoadingViews">
+                                 <option value="">-- No Filter --</option>
+                                 <template x-for="col in availableColumns" :key="'tf_'+col">
+                                    <option :value="col" x-text="col"></option>
+                                </template>
+                             </select>
+                             <small class="form-text text-muted">Select the Excel column whose value should filter the Tableau view for each row.</small>
+                         </div>
+                     </div>
+                     <div class="row mb-3" x-show="config.export_mode === 'automate' && availableColumns.length > 0" x-transition>
+                        <label for="file_naming_option" class="col-sm-3 col-form-label">File Naming:</label>
+                         <div class="col-sm-9">
+                            <select class="form-select" id="file_naming_option" name="file_naming_option" x-model="config.file_naming_option" :disabled="!config.sheet_name || isExporting || isLoadingViews">
+                                <option value="By view">Use Tableau view name</option>
+                                <template x-for="col in availableColumns" :key="'fn_'+col">
+                                    <option :value="col" x-text="`Use value from column: '${col}'`"></option>
+                                </template>
+                            </select>
+                         </div>
+                    </div>
+                    <div class="row mb-3" x-show="config.export_mode === 'automate' && availableColumns.length > 0" x-transition>
+                        <label for="organize_by_1" class="col-sm-3 col-form-label">Output Subfolder Level 1:</label>
+                         <div class="col-sm-9">
+                             <select class="form-select" id="organize_by_1" name="organize_by_1" x-model="config.organize_by_1" :disabled="!config.sheet_name || isExporting || isLoadingViews">
+                                 <option value="None">-- No Subfolder --</option>
+                                 <template x-for="col in availableColumns" :key="'o1_'+col">
+                                    <option :value="col" x-text="`Create folders from column: '${col}'`"></option>
+                                </template>
+                             </select>
+                         </div>
+                    </div>
+                     <div class="row mb-3" x-show="config.export_mode === 'automate' && availableColumns.length > 0" x-transition>
+                        <label for="organize_by_2" class="col-sm-3 col-form-label">Output Subfolder Level 2:</label>
+                         <div class="col-sm-9">
+                             <select class="form-select" id="organize_by_2" name="organize_by_2" x-model="config.organize_by_2" :disabled="!config.sheet_name || isExporting || isLoadingViews">
+                                 <option value="None">-- No Subfolder --</option>
+                                 <template x-for="col in availableColumns" :key="'o2_'+col">
+                                    <option :value="col" x-text="`Create nested folders from column: '${col}'`"></option>
+                                </template>
+                             </select>
+                         </div>
+                    </div>
+                     <hr x-show="config.export_mode === 'automate'">
+                </div> <div class="row mb-3">
+                     <label class="col-sm-3 col-form-label pt-0">Export Format:</label>
+                     <div class="col-sm-9">
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="pdf" name="export_format" value="PDF" x-model="config.export_format" :disabled="isExporting || isLoadingViews">
+                            <label class="form-check-label" for="pdf">PDF</label>
+                          </div>
+                         <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="png" name="export_format" value="PNG" x-model="config.export_format" :disabled="isExporting || isLoadingViews">
+                            <label class="form-check-label" for="png">PNG (High Res)</label>
+                        </div>
+                     </div>
+                 </div>
+                 <div class="row mb-3">
+                     <div class="col-sm-9 offset-sm-3">
+                         <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="numbering" name="numbering_enabled" value="true" x-model="config.numbering_enabled" :disabled="isExporting || isLoadingViews">
+                            <label class="form-check-label" for="numbering">Add numbering prefix to filenames (e.g., 01_, 02_)</label>
+                        </div>
+                     </div>
+                 </div>
+                  <div class="row mb-3" x-show="availableViews.length > 0" x-transition> <label for="excluded_views" class="col-sm-3 col-form-label">Globally Exclude Views:</label>
+                    <div class="col-sm-9">
+                        <select class="form-select" id="excluded_views" name="excluded_views" multiple size="8" x-model="config.excluded_views" :disabled="isExporting || isLoadingViews">
+                            <template x-for="view in availableViews" :key="view">
+                                <option :value="view" x-text="view"></option>
+                            </template>
+                        </select>
+                        <small class="form-text text-muted">Hold Ctrl/Cmd to select multiple views to exclude from all exports.</small>
+                    </div>
+                 </div>
+            </fieldset>
+
+            <fieldset class="mb-3 border p-3 rounded" x-show="config.export_mode === 'automate'" x-transition>
+                <legend class="fw-bold fs-6">2. Filtering & Conditional Logic <small class="text-muted">(Optional)</small></legend>
+
+                <div class="mb-4 p-3 border rounded bg-light" :class="{ 'disabled-section': availableColumns.length === 0 || isExporting || isLoadingViews }">
+                    <h5 class="fw-normal fs-6">Excel List Filters <small class="text-muted">(Rows to Include)</small></h5>
+                    <p class="small text-muted">Define which rows from your Excel file to process. Only rows matching ALL filter criteria will be included.</p>
+                    <div class="filters-container">
+                        <template x-if="config.filters.length === 0">
+                            <p class="text-muted fst-italic small">No filters added. All rows from the selected sheet will be processed.</p>
+                        </template>
+                        <template x-for="(filter, index) in config.filters" :key="'filter_'+index">
+                            <div class="logic-row align-items-center border-bottom pb-2 mb-2">
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <label :for="'filter_field_'+index" class="form-label small mb-0">Filter Field:</label>
+                                    <select class="form-select form-select-sm" :id="'filter_field_'+index" :name="'filter_field_'+index" x-model="filter.field" required :disabled="availableColumns.length === 0">
+                                         <option value="" disabled>-- Select Field --</option>
+                                         <template x-for="col in availableColumns" :key="'ff_'+index+'_'+col">
+                                            <option :value="col" x-text="col"></option>
+                                         </template>
+                                    </select>
+                                </div>
+                                <div class="col-md-8 mb-2 mb-md-0">
+                                    <label :for="'filter_values_'+index" class="form-label small mb-0">Include Rows Where Value Is One Of:</label>
+                                     <input type="text" class="form-control form-control-sm" :id="'filter_values_'+index" :name="'filter_values_'+index" x-model="filter.values_str" placeholder="Comma-separated values (e.g., ValueA, ValueB)" required :disabled="!filter.field">
+                                    <small class="text-muted">UI needed to show actual values</small>
+                                </div>
+                                <div class="col-md-1 text-end">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" @click="removeFilter(index)" title="Remove Filter" :disabled="isExporting || isLoadingViews"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary mt-2" @click="addFilter" :disabled="availableColumns.length === 0 || isExporting || isLoadingViews"><i class="bi bi-plus-circle me-1"></i> Add Filter</button>
+                </div>
+
+                <div class="mb-4 p-3 border rounded bg-light" :class="{ 'disabled-section': availableColumns.length === 0 || availableViews.length === 0 || isExporting || isLoadingViews }">
+                    <h5 class="fw-normal fs-6">Conditional View Exclusion</h5>
+                     <p class="small text-muted">Define rules based on Excel data to exclude specific Tableau views *only* when the condition is met for a row.</p>
+                    <div class="conditions-container">
+                         <template x-if="config.conditions.length === 0">
+                            <p class="text-muted fst-italic small">No conditions added. Views will only be excluded based on the global list (Section 1).</p>
+                        </template>
+                         <template x-for="(condition, index) in config.conditions" :key="'cond_'+index">
+                            <div class="logic-row align-items-center border-bottom pb-2 mb-2">
+                                <div class="col-md-1 mb-2 mb-md-0 fw-bold">If:</div>
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <label :for="'cond_field_'+index" class="form-label small mb-0">Field:</label>
+                                    <select class="form-select form-select-sm" :id="'cond_field_'+index" :name="'cond_field_'+index" x-model="condition.field" required :disabled="availableColumns.length === 0">
+                                        <option value="" disabled>-- Select Field --</option>
+                                         <template x-for="col in availableColumns" :key="'cf_'+index+'_'+col">
+                                            <option :value="col" x-text="col"></option>
+                                         </template>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-2 mb-md-0">
+                                     <label :for="'cond_type_'+index" class="form-label small mb-0">Is:</label>
+                                    <select class="form-select form-select-sm" :id="'cond_type_'+index" :name="'cond_type_'+index" x-model="condition.type">
+                                        <option value="Equals">Equals</option>
+                                        <option value="Not Equals">Not Equals</option>
+                                        <option value="Greater Than">Greater Than</option>
+                                        <option value="Less Than">Less Than</option>
+                                        <option value="Is Blank">Is Blank</option>
+                                        <option value="Is Not Blank">Is Not Blank</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2 mb-2 mb-md-0">
+                                    <label :for="'cond_value_'+index" class="form-label small mb-0">Value:</label>
+                                    <input type="text" class="form-control form-control-sm" :id="'cond_value_'+index" :name="'cond_value_'+index" x-model="condition.value" :disabled="condition.type.includes('Blank') || !condition.field" placeholder="Value">
+                                </div>
+                                <div class="col-md-3 mb-2 mb-md-0">
+                                    <label :for="'cond_views_'+index" class="form-label small mb-0">Then Exclude Views:</label>
+                                    <input type="text" class="form-control form-control-sm" :id="'cond_views_'+index" :name="'cond_views_'+index" x-model="condition.excluded_views_str" placeholder="Comma-separated view names" required :disabled="availableViews.length === 0">
+                                     <small class="text-muted">UI needed to show views</small>
+                                </div>
+                                <div class="col-md-1 text-end">
+                                    <button type="button" class="btn btn-sm btn-outline-danger" @click="removeCondition(index)" title="Remove Condition" :disabled="isExporting || isLoadingViews"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+                         </template>
+                    </div>
+                     <button type="button" class="btn btn-sm btn-outline-secondary mt-2" @click="addCondition" :disabled="availableColumns.length === 0 || availableViews.length === 0 || isExporting || isLoadingViews"><i class="bi bi-plus-circle me-1"></i> Add Condition</button>
+                </div>
+
+                <div class="p-3 border rounded bg-light" :class="{ 'disabled-section': isExporting || isLoadingViews }">
+                    <h5 class="fw-normal fs-6">Parameter Overrides</h5>
+                     <p class="small text-muted">Override Tableau Parameters for each export. The 'Value' can be a fixed string or the name of an Excel column to read from.</p>
+                    <div class="parameters-container">
+                         <template x-if="config.parameters.length === 0">
+                             <p class="text-muted fst-italic small">No parameter overrides added.</p>
+                         </template>
+                         <template x-for="(param, index) in config.parameters" :key="'param_'+index">
+                            <div class="logic-row align-items-center border-bottom pb-2 mb-2">
+                                <div class="col-md-4 mb-2 mb-md-0">
+                                     <label :for="'param_name_'+index" class="form-label small mb-0">Parameter Name:</label>
+                                     <input type="text" class="form-control form-control-sm" :id="'param_name_'+index" :name="'param_name_'+index" x-model="param.name" placeholder="Exact Tableau Parameter Name" required>
+                                 </div>
+                                <div class="col-md-7 mb-2 mb-md-0">
+                                    <label :for="'param_value_'+index" class="form-label small mb-0">Value (or Excel Column Name):</label>
+                                     <input type="text" class="form-control form-control-sm" :id="'param_value_'+index" :name="'param_value_'+index" x-model="param.value" placeholder="Static value or Excel Column Name" required>
+                                 </div>
+                                <div class="col-md-1 text-end">
+                                     <button type="button" class="btn btn-sm btn-outline-danger" @click="removeParameter(index)" title="Remove Parameter" :disabled="isExporting || isLoadingViews"><i class="bi bi-trash"></i></button>
+                                </div>
+                            </div>
+                         </template>
+                    </div>
+                     <button type="button" class="btn btn-sm btn-outline-secondary mt-2" @click="addParameter" :disabled="isExporting || isLoadingViews"><i class="bi bi-plus-circle me-1"></i> Add Parameter Override</button>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-3 border p-3 rounded">
+                <legend class="fw-bold fs-6">3. Run Export</legend>
+                <div class="mb-3">
+                    <div class="progress" role="progressbar" aria-label="Export Progress" :aria-valuenow="exportProgress" aria-valuemin="0" aria-valuemax="100" style="height: 25px;">
+                      <div class="progress-bar progress-bar-striped progress-bar-animated"
+                           :class="{'bg-success': exportProgress === 100 && !isExporting, 'bg-danger': exportStatusMessage.toLowerCase().includes('fail') || exportStatusMessage.toLowerCase().includes('error')}"
+                           :style="{ width: exportProgress + '%' }"
+                           x-text="exportProgress > 0 ? exportProgress + '%' : ''">
+                      </div>
+                    </div>
+                    <div class="text-center mt-1" x-text="exportStatusMessage"></div>
+                </div>
+                <div id="log-output-container" class="border bg-light rounded p-2" :class="{'d-none': logMessages.length === 0}">
+                     <strong class="small d-block mb-1">Log Output:</strong>
+                     <div id="log-output" style="max-height: 250px; overflow-y: auto; font-family: monospace; font-size: 0.8em; line-height: 1.4;">
+                        <template x-for="(msg, index) in logMessages" :key="'log_'+index">
+                            <p class="mb-1" x-html="msg"></p>
+                        </template>
+                    </div>
+                </div>
+             </fieldset>
+
+            <div class="controls mt-4 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-lg me-3" :disabled="isExporting || isLoadingViews">
+                     <span x-show="!isExporting">
+                         <i class="bi bi-play-fill me-1"></i> Start Export
+                     </span>
+                     <span x-show="isExporting">
+                         <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span>
+                         Exporting...
+                     </span>
+                </button>
+                 <button type="button" class="btn btn-danger btn-lg" :disabled="!isExporting" @click="stopExport">
+                     <i class="bi bi-stop-fill me-1"></i> Stop Export <span class="small">(Not Implemented)</span>
+                 </button>
+            </div>
+        </form>
+
+    </div> <div class="modal fade" id="serverConfigModal" tabindex="-1" aria-labelledby="serverConfigModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false"> <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="serverConfigModalLabel"><i class="bi bi-server me-2"></i>Tableau Server Configuration</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="small text-muted">Enter your Tableau Server connection details. The PAT Secret is required for loading views and exporting.</p>
+             <p class="small text-danger"><i class="bi bi-exclamation-triangle-fill me-1"></i> The PAT Secret WILL be saved in your browser's local storage if you save the configuration. Understand the security risks.</p>
+
+             <div class="row mb-3">
+                <label for="modal_server_url" class="col-sm-4 col-form-label">Server URL:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="modal_server_url" x-model="modalConfig.server_url" placeholder="e.g., https://tableau.yourcompany.com">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="modal_site_id" class="col-sm-4 col-form-label">Site ID (Content URL):</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="modal_site_id" x-model="modalConfig.site_id" placeholder="Leave blank for Default site">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="modal_token_name" class="col-sm-4 col-form-label">Personal Access Token Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="modal_token_name" x-model="modalConfig.token_name">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="modal_token_secret" class="col-sm-4 col-form-label">Personal Access Token Secret:</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="modal_token_secret" x-model="modalConfig.token_secret" placeholder="Enter PAT Secret (required for actions)">
+                </div>
+            </div>
+             <div class="row mb-3">
+                <label for="modal_workbook_name" class="col-sm-4 col-form-label">Workbook Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="modal_workbook_name" x-model="modalConfig.workbook_name">
+                </div>
+            </div>
+            <hr>
+             <div class="d-flex justify-content-end align-items-center mt-3">
+                 <span class="me-3 small" x-show="modalTestStatus" :class="modalTestError ? 'text-danger' : 'text-success'" x-text="modalTestStatus"></span>
+                 <button type="button" class="btn btn-outline-secondary" @click="testServerConnection()" :disabled="isTestingConnection || !modalConfig.server_url || !modalConfig.token_name || !modalConfig.token_secret">
+                     <span x-show="!isTestingConnection"><i class="bi bi-plug me-1"></i> Test Connection</span>
+                     <span x-show="isTestingConnection">
+                         <span class="spinner-border spinner-border-sm me-1" role="status" aria-hidden="true"></span> Testing...
+                     </span>
+                 </button>
+             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" @click="saveServerConfigFromModal()" data-bs-dismiss="modal">
+                <i class="bi bi-check-circle me-1"></i> Apply Settings
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

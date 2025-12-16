@@ -1,0 +1,75 @@
+/* Custom Styles */
+
+/* Make legends slightly smaller to fit better */
+legend {
+    font-size: 1.1rem;
+    font-weight: 600; /* Slightly bolder */
+}
+
+/* Ensure labels in rows align nicely with inputs */
+.col-form-label {
+    padding-top: calc(0.375rem + 1px); /* Vertically center bootstrap label */
+    padding-bottom: calc(0.375rem + 1px);
+    line-height: 1.5;
+    text-align: right; /* Right-align labels */
+}
+
+/* Reduce default bottom margin for form rows */
+.row.mb-3 {
+    margin-bottom: 0.75rem !important; /* Slightly less spacing */
+}
+
+/* Style for dynamically added logic rows */
+.logic-row {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.75rem !important; /* Ensure spacing */
+    gap: 0.5rem; /* Add gap between items */
+}
+.logic-row label {
+    margin-bottom: 0 !important; /* Remove bottom margin on small labels */
+    font-weight: 500;
+}
+
+/* Style the log output */
+#log-output {
+    max-height: 250px;
+    overflow-y: auto;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font */
+    font-size: 0.85em;
+    line-height: 1.4;
+    background-color: #e9ecef; /* Slightly darker background */
+    white-space: pre-wrap; /* Preserve whitespace and wrap */
+    word-break: break-all;
+}
+#log-output p {
+    margin-bottom: 2px; /* Tighten log line spacing */
+    padding: 0;
+}
+
+/* Disable appearance for sections that depend on columns/views */
+.disabled-section {
+    opacity: 0.6;
+    pointer-events: none; /* Prevent interaction */
+}
+.disabled-section > button {
+     pointer-events: none; /* Ensure button within is also disabled */
+}
+
+/* Add some visual feedback for status messages */
+.text-danger { color: #dc3545 !important; }
+.text-success { color: #198754 !important; }
+.text-muted { color: #6c757d !important; }
+.text-primary { color: #0d6efd !important; }
+.text-warning { color: #ffc107 !important; }
+
+/* Spinner alignment */
+.btn .spinner-border {
+    vertical-align: text-bottom;
+}
+
+/* Flash message container */
+#flash-message-container .alert {
+    margin-bottom: 0.75rem;
+}

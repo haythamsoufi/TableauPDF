@@ -1,0 +1,17 @@
+# Core functionality & API interaction
+pandas
+requests
+tableauserverclient
+
+# PDF/Image processing
+PyMuPDF
+Pillow
+
+# GUI Framework
+PyQt5
+
+# Desktop Notifications (used in run_task)
+plyer
+
+# Version comparison (used in update check)
+packaging

@@ -1,55 +1,99 @@
-2025-04-30 22:34:28,499 - INFO - [init_logger:486] - File logging directed to: C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\app.log
-2025-04-30 22:34:28,499 - INFO - [init_logger:508] - PDF Export Tool v1.5 started.
-2025-04-30 22:34:28,509 - DEBUG - [initUI:550] - Initializing UI with QScrollArea and fixed width.
-2025-04-30 22:34:29,164 - WARNING - [initUI:647] - Help icon not found.
-2025-04-30 22:34:29,390 - DEBUG - [setup_export_settings_panel:840] - Setting up collapsible export settings panel.
-2025-04-30 22:34:37,117 - INFO - [initUI:738] - Set maximum window height to: 1090px
-2025-04-30 22:34:37,118 - INFO - [initUI:750] - Set fixed window width to: 1000px
-2025-04-30 22:34:37,122 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=701, Required=796, Target=796
-2025-04-30 22:34:37,124 - INFO - [toggle_mode_selection:1163] - Export mode changed to: Automate for a list
-2025-04-30 22:34:37,125 - DEBUG - [toggle_mode_selection:1186] - Attribute 'sheet_name' exists but is None during mode toggle.
-2025-04-30 22:34:37,125 - DEBUG - [toggle_mode_selection:1186] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
-2025-04-30 22:34:37,127 - INFO - [_perform_update_check:3836] - Checking for updates...
-2025-04-30 22:34:37,128 - DEBUG - [_perform_update_check:3838] - Requesting latest release info from https://api.github.com/repos/haythamsoufi/TableauPDF/releases/latest
-2025-04-30 22:34:41,934 - INFO - [apply_custom_theme:393] - Applied custom theme from C:\Users\Haytham.Alsoufi\OneDrive - IFRC\Shared Documents\Tech talk and files\Tools\TableauPDF\styles\macos_style.qss
-2025-04-30 22:34:43,498 - INFO - [_perform_update_check:3841] - Current version: v1.5, Latest version found: v1.5
-2025-04-30 22:34:43,549 - INFO - [_perform_update_check:3860] - Application is up-to-date.
-2025-04-30 22:35:52,880 - INFO - [load_configuration:2337] - Loading configuration from: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/New/Reporting.ini
-2025-04-30 22:35:52,882 - INFO - [reset_fields:790] - Resetting input fields.
-2025-04-30 22:35:52,889 - INFO - [reset_combined_logic:3962] - Resetting combined logic section (Filters, Conditions, Parameters).
-2025-04-30 22:35:52,895 - INFO - [reset_filters:3891] - Resetting all Excel list filters.
-2025-04-30 22:35:52,897 - INFO - [reset_conditions:3918] - Resetting all conditions.
-2025-04-30 22:35:52,900 - INFO - [reset_parameters:3940] - Resetting all parameters.
-2025-04-30 22:35:52,900 - INFO - [reset_combined_logic:3966] - Cleared all filters, conditions, and parameters.
-2025-04-30 22:35:55,655 - INFO - [load_sheets:1268] - Loaded sheets: ['Export List', 'Support', 'Key data', 'UPR Data', 'UPR Submissions', 'P25 imputed', 'Indicator bank', 'Icons', 'GRBMP']. Selecting first sheet 'Export List'.
-2025-04-30 22:35:55,657 - INFO - [on_sheet_selection_changed:1317] - Sheet selection changed to: 'Export List'
-2025-04-30 22:35:55,660 - INFO - [reset_combined_logic:3962] - Resetting combined logic section (Filters, Conditions, Parameters).
-2025-04-30 22:35:55,661 - INFO - [reset_filters:3891] - Resetting all Excel list filters.
-2025-04-30 22:35:55,663 - INFO - [reset_conditions:3918] - Resetting all conditions.
-2025-04-30 22:35:55,665 - INFO - [reset_parameters:3940] - Resetting all parameters.
-2025-04-30 22:35:55,666 - INFO - [reset_combined_logic:3966] - Cleared all filters, conditions, and parameters.
-2025-04-30 22:35:56,490 - INFO - [on_sheet_selection_changed:1334] - Loaded columns from sheet 'Export List': ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach']
-2025-04-30 22:35:56,502 - DEBUG - [load_columns_for_filters:1824] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 filter field(s).
-2025-04-30 22:35:56,503 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 0 condition(s).
-2025-04-30 22:35:56,504 - INFO - [load_configuration:2368] - Setting sheet index to 0 ('Export List') from config.
-2025-04-30 22:35:56,506 - INFO - [toggle_mode_selection:1163] - Export mode changed to: Automate for a list
-2025-04-30 22:35:56,514 - DEBUG - [add_filter_line:1622] - Adding new filter line to UI.
-2025-04-30 22:35:57,489 - DEBUG - [populate_values_list:1743] - Populating values list for filter field: 'Round'
-2025-04-30 22:35:58,458 - DEBUG - [populate_values_list:1761] - Found 3 unique values for 'Round'. Populating list.
-2025-04-30 22:35:58,470 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
-2025-04-30 22:35:59,508 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
-2025-04-30 22:35:59,510 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
-2025-04-30 22:36:00,425 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
-2025-04-30 22:36:00,440 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
-2025-04-30 22:36:01,468 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
-2025-04-30 22:36:01,486 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
-2025-04-30 22:36:02,473 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
-2025-04-30 22:36:02,485 - DEBUG - [add_condition_line:1856] - Adding new condition line to UI.
-2025-04-30 22:36:03,572 - DEBUG - [load_columns_for_conditions:2591] - Loading columns ['Round', 'ISO3', 'Country', 'Count', 'Region', 'EmergencyCount', 'EA Reach'] for 1 condition(s).
-2025-04-30 22:36:03,601 - INFO - [add_recent_file:2301] - Added 'Reporting.ini' to recent files.
-2025-04-30 22:36:03,893 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=1047, Required=1142, Target=1090
-2025-04-30 22:36:06,114 - DEBUG - [toggle_logic_section:1485] - Logic section visibility toggled to: False
-2025-04-30 22:36:06,118 - DEBUG - [_adjust_window_height:784] - Adjusting height: ContentHint=704, Required=799, Target=799
-2025-04-30 22:36:06,130 - DEBUG - [toggle_logic_section:1488] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 799)
-2025-04-30 22:36:10,560 - INFO - [closeEvent:3868] - Close event triggered.
-2025-04-30 22:36:10,560 - INFO - [closeEvent:3881] - Accepting close event (no task running).
+2025-09-18 14:54:53,601 - INFO - [init_logger:487] - File logging directed to: C:\Users\Haytham.Alsoufi\IFRC\THE FDS TEAM - Tech talk and files\Tools\TableauPDF\app.log
+2025-09-18 14:54:53,601 - INFO - [init_logger:509] - PDF Export Tool v1.4.5 started.
+2025-09-18 14:54:53,602 - DEBUG - [initUI:551] - Initializing UI with QScrollArea and fixed width.
+2025-09-18 14:54:53,664 - WARNING - [initUI:648] - Help icon not found.
+2025-09-18 14:54:53,712 - DEBUG - [setup_export_settings_panel:843] - Setting up collapsible export settings panel.
+2025-09-18 14:54:55,039 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Reporting.ini
+2025-09-18 14:54:55,040 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/AR24.ini
+2025-09-18 14:54:55,040 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Bundled plans.ini
+2025-09-18 14:54:55,058 - INFO - [initUI:739] - Set maximum window height to: 1090px
+2025-09-18 14:54:55,059 - INFO - [initUI:751] - Set fixed window width to: 1000px
+2025-09-18 14:54:55,061 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=731, Required=826, Target=826
+2025-09-18 14:54:55,062 - INFO - [toggle_mode_selection:1179] - Export mode changed to: Automate for a list
+2025-09-18 14:54:55,063 - DEBUG - [toggle_mode_selection:1205] - Attribute 'sheet_name' exists but is None during mode toggle.
+2025-09-18 14:54:55,063 - DEBUG - [toggle_mode_selection:1205] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
+2025-09-18 14:54:55,063 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=731, Required=826, Target=826
+2025-09-18 14:54:55,064 - INFO - [_perform_update_check:4074] - Checking for updates...
+2025-09-18 14:54:55,065 - DEBUG - [_perform_update_check:4076] - Requesting latest release info from https://api.github.com/repos/haythamsoufi/TableauPDF/releases/latest
+2025-09-18 14:54:56,811 - INFO - [apply_custom_theme:394] - Applied custom theme from C:\Users\Haytham.Alsoufi\IFRC\THE FDS TEAM - Tech talk and files\Tools\TableauPDF\styles\macos_style.qss
+2025-09-18 14:54:57,562 - INFO - [_perform_update_check:4079] - Current version: v1.4.5, Latest version found: v1.4.4
+2025-09-18 14:54:57,563 - INFO - [_perform_update_check:4098] - Application is up-to-date.
+2025-09-18 14:57:58,004 - DEBUG - [toggle_logic_section:1517] - Logic section visibility toggled to: False
+2025-09-18 14:57:58,005 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=717, Required=812, Target=812
+2025-09-18 14:57:58,007 - DEBUG - [toggle_logic_section:1520] - Window size after logic toggle: PyQt5.QtCore.QSize(1000, 812)
+2025-09-18 14:58:00,993 - INFO - [load_configuration:2400] - Loading configuration from: C:/Users/Haytham.Alsoufi/IFRC/THE FDS TEAM - Tech talk and files/Tools/TableauPDF/config/AR24.ini
+2025-09-18 14:58:00,994 - INFO - [reset_fields:791] - Resetting input fields.
+2025-09-18 14:58:00,994 - INFO - [reset_combined_logic:4199] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-09-18 14:58:00,994 - INFO - [reset_filters:4128] - Resetting all Excel list filters.
+2025-09-18 14:58:00,995 - INFO - [reset_conditions:4155] - Resetting all conditions.
+2025-09-18 14:58:00,995 - INFO - [reset_parameters:4177] - Resetting all parameters.
+2025-09-18 14:58:00,995 - INFO - [reset_combined_logic:4203] - Cleared all filters, conditions, and parameters.
+2025-09-18 14:58:01,017 - ERROR - [load_sheets:1308] - Permission denied for Excel file: C:/Users/Haytham.Alsoufi/IFRC/THE FDS TEAM - Unified Planning and Reporting/UPR Master.xlsx. It might be open.
+2025-09-18 14:58:02,878 - INFO - [load_sheets:1315] - User cancelled retry for locked Excel file.
+2025-09-18 14:58:02,879 - INFO - [on_sheet_selection_changed:1348] - Sheet selection changed to: ''
+2025-09-18 14:58:02,879 - INFO - [reset_filters:4128] - Resetting all Excel list filters.
+2025-09-18 14:58:02,880 - INFO - [reset_conditions:4155] - Resetting all conditions.
+2025-09-18 14:58:02,880 - INFO - [on_sheet_selection_changed:1392] - No sheet selected or Excel path missing, clearing dependent dropdowns.
+2025-09-18 14:58:02,881 - WARNING - [load_configuration:2438] - Excel file loaded, but no sheets found.
+2025-09-18 14:58:02,881 - INFO - [on_sheet_selection_changed:1348] - Sheet selection changed to: ''
+2025-09-18 14:58:02,882 - INFO - [reset_filters:4128] - Resetting all Excel list filters.
+2025-09-18 14:58:02,882 - INFO - [reset_conditions:4155] - Resetting all conditions.
+2025-09-18 14:58:02,883 - INFO - [on_sheet_selection_changed:1392] - No sheet selected or Excel path missing, clearing dependent dropdowns.
+2025-09-18 14:58:02,883 - INFO - [toggle_mode_selection:1179] - Export mode changed to: Automate for a list
+2025-09-18 14:58:02,883 - DEBUG - [toggle_mode_selection:1205] - Attribute 'sheet_name' exists but is None during mode toggle.
+2025-09-18 14:58:02,884 - DEBUG - [toggle_mode_selection:1205] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
+2025-09-18 14:58:02,892 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=717, Required=812, Target=812
+2025-09-18 14:58:02,892 - WARNING - [load_configuration:2458] - Skipping setting column-dependent options as columns failed to load.
+2025-09-18 14:58:02,893 - DEBUG - [add_filter_line:1669] - Adding new filter line to UI.
+2025-09-18 14:58:02,898 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:02,901 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:02,904 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:02,907 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:02,909 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:02,912 - DEBUG - [add_parameter_line:1969] - Adding new parameter line to UI.
+2025-09-18 14:58:02,931 - INFO - [add_recent_file:2343] - Added 'AR24.ini' to recent files.
+2025-09-18 14:58:02,948 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Reporting.ini
+2025-09-18 14:58:02,954 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/AR24.ini
+2025-09-18 14:58:02,959 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Bundled plans.ini
+2025-09-18 14:58:02,966 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=717, Required=812, Target=812
+2025-09-18 14:58:03,613 - INFO - [load_configuration_file:2238] - Opening file dialog to load configuration.
+2025-09-18 14:58:03,614 - DEBUG - [load_configuration_file:2246] - Defaulting load dialog to existing folder: C:\Users\Haytham.Alsoufi\IFRC\THE FDS TEAM - Tech talk and files\Tools\TableauPDF\config
+2025-09-18 14:58:09,737 - INFO - [load_configuration:2400] - Loading configuration from: C:/Users/Haytham.Alsoufi/IFRC/THE FDS TEAM - Tech talk and files/Tools/TableauPDF/config/Reporting.ini
+2025-09-18 14:58:09,738 - INFO - [reset_fields:791] - Resetting input fields.
+2025-09-18 14:58:09,738 - INFO - [reset_combined_logic:4199] - Resetting combined logic section (Filters, Conditions, Parameters).
+2025-09-18 14:58:09,739 - INFO - [reset_filters:4128] - Resetting all Excel list filters.
+2025-09-18 14:58:09,739 - DEBUG - [remove_filter_line:1840] - Removing filter: N/A
+2025-09-18 14:58:09,743 - INFO - [reset_conditions:4155] - Resetting all conditions.
+2025-09-18 14:58:09,744 - DEBUG - [remove_condition_line:2007] - Removing condition: N/A
+2025-09-18 14:58:09,749 - DEBUG - [remove_condition_line:2007] - Removing condition: N/A
+2025-09-18 14:58:09,756 - DEBUG - [remove_condition_line:2007] - Removing condition: N/A
+2025-09-18 14:58:09,762 - DEBUG - [remove_condition_line:2007] - Removing condition: N/A
+2025-09-18 14:58:09,767 - DEBUG - [remove_condition_line:2007] - Removing condition: N/A
+2025-09-18 14:58:09,772 - INFO - [reset_parameters:4177] - Resetting all parameters.
+2025-09-18 14:58:09,773 - DEBUG - [remove_parameter_line:2032] - Removing parameter: RoundParameter
+2025-09-18 14:58:09,775 - INFO - [reset_combined_logic:4203] - Cleared all filters, conditions, and parameters.
+2025-09-18 14:58:09,807 - INFO - [load_configuration:2445] - No valid Excel path in config, clearing sheet-dependent fields.
+2025-09-18 14:58:09,807 - INFO - [on_sheet_selection_changed:1348] - Sheet selection changed to: ''
+2025-09-18 14:58:09,808 - INFO - [reset_filters:4128] - Resetting all Excel list filters.
+2025-09-18 14:58:09,808 - INFO - [reset_conditions:4155] - Resetting all conditions.
+2025-09-18 14:58:09,808 - INFO - [on_sheet_selection_changed:1392] - No sheet selected or Excel path missing, clearing dependent dropdowns.
+2025-09-18 14:58:09,809 - INFO - [toggle_mode_selection:1179] - Export mode changed to: Automate for a list
+2025-09-18 14:58:09,809 - DEBUG - [toggle_mode_selection:1205] - Attribute 'sheet_name' exists but is None during mode toggle.
+2025-09-18 14:58:09,809 - DEBUG - [toggle_mode_selection:1205] - Attribute 'tableau_filter_field_dropdown' exists but is None during mode toggle.
+2025-09-18 14:58:09,831 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=717, Required=812, Target=812
+2025-09-18 14:58:09,831 - WARNING - [load_configuration:2458] - Skipping setting column-dependent options as columns failed to load.
+2025-09-18 14:58:09,831 - DEBUG - [add_filter_line:1669] - Adding new filter line to UI.
+2025-09-18 14:58:09,838 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:09,842 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:09,852 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:09,855 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:09,860 - DEBUG - [add_condition_line:1900] - Adding new condition line to UI.
+2025-09-18 14:58:09,868 - INFO - [add_recent_file:2343] - Added 'Reporting.ini' to recent files.
+2025-09-18 14:58:09,912 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Reporting.ini
+2025-09-18 14:58:09,912 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/AR24.ini
+2025-09-18 14:58:09,949 - DEBUG - [_adjust_window_height:785] - Adjusting height: ContentHint=717, Required=812, Target=812
+2025-09-18 14:58:09,952 - INFO - [add_recent_file:2343] - Added 'Reporting.ini' to recent files.
+2025-09-18 14:58:09,958 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/Reporting.ini
+2025-09-18 14:58:09,958 - WARNING - [load_recent_files:2299] - Recent file path not found or invalid, skipping: C:/Users/Haytham.Alsoufi/OneDrive - IFRC/Shared Documents/Tech talk and files/Tools/TableauPDF/config/AR24.ini
+2025-09-18 15:09:02,256 - INFO - [closeEvent:4106] - Close event triggered.
+2025-09-18 15:09:02,256 - INFO - [closeEvent:4119] - Accepting close event (no task running).
