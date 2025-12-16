@@ -1,0 +1,47 @@
+# Config files with sensitive information (API keys, tokens, passwords)
+config/*.ini
+settings.ini
+dist/settings.ini
+**/settings.ini
+
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.env
+
+# Build artifacts
+build/
+dist/
+*.spec
+*.pyc
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs (may contain sensitive paths and information)
+*.log
+app.log
+dist/*.log
+
+# Uploaded configs (web exporter)
+uploaded_configs/
+tableau-web-exporter/uploaded_configs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
